@@ -5,6 +5,12 @@ using UnityEngine;
 public class gunController : MonoBehaviour
 {
 
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float fireRate = 0.5f; // Adjust as needed
+    private float nextFireTime = 0f;
+    private bool canFire = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +41,26 @@ public class gunController : MonoBehaviour
         transform.localScale = theScale;
         //Ta daa
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+        if (canFire && Input.GetButton("Fire1") && Time.time >= nextFireTime)
+        {
+            ShootBulletTowardsCursor();
+            nextFireTime = Time.time + fireRate; // Update next allowed fire time
+        }
     }
 
     float AngleBetweenPoints(Vector2 a, Vector2 b)
     {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+    }
+
+    private void ShootBulletTowardsCursor()
+    {
+        // Instantiate the bullet at the player's position
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+        // Rotate the bullet to face the mouse direction
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (mousePos - transform.position).normalized;
+        bullet.transform.up = direction;
     }
 }
