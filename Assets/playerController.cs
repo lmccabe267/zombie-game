@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -37,5 +38,20 @@ public class PlayerController : MonoBehaviour
         }
 
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        var zombie = other.collider.GetComponent<Zombie>();
+        if (zombie != null )
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+        FindObjectOfType<TMP_Text>().enabled = true;
     }
 }

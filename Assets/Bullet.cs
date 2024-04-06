@@ -34,6 +34,14 @@ public class Bullet : MonoBehaviour
             // For example, destroy the bullet:
             Destroy(gameObject);
         }
+
+        var zombie = collision.gameObject.GetComponent<Zombie>();
+        if (zombie != null)
+        {
+            zombie.Die();
+        }
+        Destroy(gameObject);
+        //if (collision.collider.GetComponent("Zombie"))
     }
 
 }
