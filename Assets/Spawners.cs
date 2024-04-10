@@ -2,14 +2,18 @@ using UnityEngine;
 
 public class Spawners : MonoBehaviour
 {
-    public float SpawningRate = 4f;
+    public float SpawningRate = 2f;
     public GameObject ZombiePrefab;
     public Transform[] SpawnPoints;
 
     private float LastSpawnTime;
+    public PlayerController _player;
 
     void Update()
     {
+        _player = FindAnyObjectByType<PlayerController>();
+        if (_player == null) return;
+
         if (LastSpawnTime + SpawningRate < Time.time)
         {
             var randomSpawnPoint = SpawnPoints[Random.Range(0,SpawnPoints.Length - 1)];

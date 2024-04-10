@@ -161,5 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e053212c0b020d044991e1ec44382cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseSpeed: 3
+  BaseSpeed: 4
   BloodPrefab: {fileID: 1999956753668355713, guid: f86cf2838887b6b44a3855d25e927a05, type: 3}
