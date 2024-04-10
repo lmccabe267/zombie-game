@@ -7,6 +7,7 @@ public class Zombie : MonoBehaviour
     private float _speed;
 
     public float BaseSpeed;
+    public GameObject BloodPrefab;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -25,6 +26,7 @@ public class Zombie : MonoBehaviour
 
     public void Die()
     {
+        Instantiate(BloodPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject); 
     }
 }

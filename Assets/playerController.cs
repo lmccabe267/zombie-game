@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 20.0f;
 
     public Transform target;
+    public GameObject BloodPrefab;
 
     void Start()
     {
@@ -51,7 +52,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        Instantiate(BloodPrefab, transform.position, Quaternion.identity);
         FindObjectOfType<TMP_Text>().enabled = true;
+        Destroy(gameObject);
     }
 }
