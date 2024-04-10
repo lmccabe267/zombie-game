@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform target;
     public GameObject BloodPrefab;
+    public GameObject deathCameraPrefab;
 
     void Start()
     {
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(BloodPrefab, transform.position, Quaternion.identity);
         FindObjectOfType<TMP_Text>().enabled = true;
+        Instantiate(deathCameraPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

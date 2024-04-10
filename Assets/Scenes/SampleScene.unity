@@ -203,6 +203,7 @@ MonoBehaviour:
   runSpeed: 20
   target: {fileID: 0}
   BloodPrefab: {fileID: 1999956753668355713, guid: f86cf2838887b6b44a3855d25e927a05, type: 3}
+  deathCameraPrefab: {fileID: 3922228149734681401, guid: 57804e4dbf789c24d827eb41c27b9c33, type: 3}
 --- !u!50 &21411001
 Rigidbody2D:
   serializedVersion: 4
@@ -2272,6 +2273,7 @@ MonoBehaviour:
   - {fileID: 1664276835}
   - {fileID: 1717979606}
   - {fileID: 1622095857}
+  _player: {fileID: 0}
 --- !u!4 &1134547913
 Transform:
   m_ObjectHideFlags: 0
