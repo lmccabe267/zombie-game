@@ -5,11 +5,14 @@ public class Bullet : MonoBehaviour
     public float speed = 10f; // Speed of the bullet
     public float maxDistance = 10f; // Maximum distance the bullet can travel
 
+    KillCounter killCounterScript;
+
     private Vector2 startPosition; // Starting position of the bullet
 
     void Start()
     {
         startPosition = transform.position; // Record the starting position of the bullet
+        killCounterScript = GameObject.Find("KCO").GetComponent<KillCounter>();
     }
 
     void Update()
@@ -39,6 +42,7 @@ public class Bullet : MonoBehaviour
         if (zombie != null)
         {
             zombie.Die();
+            killCounterScript.addKill();
         }
         Destroy(gameObject);
         //if (collision.collider.GetComponent("Zombie"))
