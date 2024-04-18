@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
     public float maxDistance = 10f; // Maximum distance the bullet can travel
 
     KillCounter killCounterScript;
+    Portal portal;
 
     private Vector2 startPosition; // Starting position of the bullet
 
@@ -13,6 +14,7 @@ public class Bullet : MonoBehaviour
     {
         startPosition = transform.position; // Record the starting position of the bullet
         killCounterScript = GameObject.Find("KCO").GetComponent<KillCounter>();
+        
     }
 
     void Update()
@@ -43,6 +45,7 @@ public class Bullet : MonoBehaviour
         {
             zombie.Die();
             killCounterScript.addKill();
+            
         }
         Destroy(gameObject);
         //if (collision.collider.GetComponent("Zombie"))

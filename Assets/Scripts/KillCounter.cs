@@ -7,7 +7,7 @@ using TMPro;
 public class KillCounter : MonoBehaviour
 {
     public TMP_Text counterText;
-    int kills;
+    public int kills;
     // Start is called before the first frame update
     void Start()
     {
