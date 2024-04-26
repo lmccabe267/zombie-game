@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2808774504682414232}
   - component: {fileID: 1880179391914729999}
   - component: {fileID: 8192128362808518617}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: zombies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,3 +163,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseSpeed: 4
   BloodPrefab: {fileID: 1999956753668355713, guid: f86cf2838887b6b44a3855d25e927a05, type: 3}
+  gravestones:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
