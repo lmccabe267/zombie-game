@@ -43,8 +43,15 @@ public class Bullet : MonoBehaviour
         var zombie = collision.gameObject.GetComponent<Zombie>();
         if (zombie != null)
         {
-            zombie.Die();
-            killCounterScript.addKill();
+            if (zombie.health != 0)
+            {
+                zombie.HitByBullet();
+            }
+            else if (zombie.health == 0)
+            {
+                zombie.Die();
+                killCounterScript.addKill();
+            }
             
         }
         Destroy(gameObject);
