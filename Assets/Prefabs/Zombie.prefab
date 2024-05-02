@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -967035009
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9311c839236846a49a7f3fb37b2446a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -163,11 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseSpeed: 4
   BloodPrefab: {fileID: 1999956753668355713, guid: f86cf2838887b6b44a3855d25e927a05, type: 3}
-  gravestones:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  gravestoneTag: graves

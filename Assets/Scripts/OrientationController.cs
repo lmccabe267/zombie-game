@@ -32,5 +32,23 @@ public class OrientationController : MonoBehaviour
             theScale.x = -10f;
         }
         transform.localScale = theScale;
+
+        // Get the mouse position in world coordinates
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0f; // Ensure the z-coordinate is 0
+
+        // Determine if the mouse is to the left or right of the player
+        bool mouseToRight = (mousePosition.x > transform.position.x);
+
+        // Flip the player sprite based on mouse position
+        if (mouseToRight)
+        {
+            transform.localScale = new Vector3(-10f, 10f, 10f); // Face left
+
+        }
+        else
+        {
+            transform.localScale = new Vector3(10f, 10f, 10f); // Face right
+        }
     }
 }
