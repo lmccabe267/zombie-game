@@ -13,14 +13,19 @@ public class PlayerController : MonoBehaviour
     float moveLimiter = 0.7f;
 
     public float runSpeed = 20.0f;
+    public float health = 3f;
+    public float maxHealth = 3f;
 
     public Transform target;
     public GameObject BloodPrefab;
     public GameObject deathCameraPrefab;
+    [SerializeField] PlayerHealthBar healthBar;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        healthBar = GetComponentInChildren<PlayerHealthBar>();
+
     }
 
     void Update()
@@ -45,10 +50,19 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         var zombie = other.collider.GetComponent<Zombie>();
-        if (zombie != null )
+        var brick = other.collider.GetComponent<EnemyBrickScript>();
+        if ((zombie != null || brick != null))
         {
-            Die();
+            if(health != 0)
+            {
+                HitByEnemy();
+            }
+            else if(health == 0)
+            {
+                Die();
+            }
         }
+        
     }
 
     public void Die()
@@ -57,5 +71,11 @@ public class PlayerController : MonoBehaviour
         FindObjectOfType<TMP_Text>().enabled = true;
         Instantiate(deathCameraPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+    public void HitByEnemy()
+    {
+        health -= 1;
+        
+        healthBar.UpdateHealthBar(health, maxHealth);
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - graves
   - zombies
   - Boss
+  - bullets
+  - ProceedDoor
   layers:
   - Default
   - TransparentFX
@@ -23,7 +25,7 @@ TagManager:
   - portal
   - gravestone
   - zombie
-  - 
+  - brick
   - 
   - 
   - 

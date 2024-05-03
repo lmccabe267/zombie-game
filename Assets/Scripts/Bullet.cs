@@ -33,28 +33,47 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log("Bullet collided with: " + collision.gameObject.name + ", " + collision.gameObject.tag);  
         // Optionally, check for a specific collision (e.g., the tilemap)
-        if (collision.collider.CompareTag("walls")) // Make sure your tilemap has this tag
+        if (collision.collider.CompareTag("walls") || collision.collider.CompareTag("ProceedDoor")) // Make sure your tilemap has this tag
         {
             // Logic for the bullet upon hitting the tilemap
             // For example, destroy the bullet:
             Destroy(gameObject);
         }
+        
 
         var zombie = collision.gameObject.GetComponent<Zombie>();
+        var bossAldo = collision.gameObject.GetComponent<BossAldo>();
         if (zombie != null)
         {
             if (zombie.health != 0)
             {
                 zombie.HitByBullet();
+                Destroy(gameObject);
             }
             else if (zombie.health == 0)
             {
                 zombie.Die();
                 killCounterScript.addKill();
+                Destroy(gameObject);
             }
             
         }
-        Destroy(gameObject);
+
+        if (bossAldo != null)
+        {
+            if (bossAldo.health != 0)
+            {
+                bossAldo.HitByBullet();
+                Destroy(gameObject);
+            }
+            else if (bossAldo.health == 0)
+            {
+                bossAldo.Die();
+                Destroy(gameObject);
+                Destroy(bossAldo);
+            }
+        }
+        
         //if (collision.collider.GetComponent("Zombie"))
     }
 

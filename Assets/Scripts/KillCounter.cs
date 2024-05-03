@@ -8,6 +8,7 @@ public class KillCounter : MonoBehaviour
 {
     public TMP_Text counterText;
     public int kills;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,8 @@ public class KillCounter : MonoBehaviour
     void Update()
     {
         showKills();
+        
+        
     }
     private void showKills()
     {
