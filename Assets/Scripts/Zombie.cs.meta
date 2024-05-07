@@ -3,7 +3,9 @@ guid: e053212c0b020d044991e1ec44382cc9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - BloodPrefab: {instanceID: 0}
+  - PowerBoostPrefab: {fileID: 6511721369855921721, guid: c682e0fde10804e3bbbbcd1993b0da7a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

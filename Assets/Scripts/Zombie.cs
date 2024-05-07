@@ -46,6 +46,7 @@ public class Zombie : MonoBehaviour
     public void Die()
     {
         Instantiate(BloodPrefab, transform.position, Quaternion.identity);
+        GetComponent<PowerUpStore>().InstantiatePowerUpDrop(transform.position);
         Destroy(gameObject); 
     }
 }
