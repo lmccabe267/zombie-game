@@ -2,21 +2,36 @@
 using System.Collections;
 
 [CreateAssetMenu(menuName = "PowerUp/SpeedBuff")]
-
 public class SpeedBuff : PowerUp
 {
     public float amount;
+    public float duration;
 
     public override void Apply(GameObject target)
     {
-        gunController gunController = target.transform.Find("gun").GetComponent<gunController>();
-        if (gunController != null)
+        MonoBehaviour behaviour = target.GetComponent<MonoBehaviour>();
+        if (behaviour != null)
         {
-            gunController.fireRate -= amount;
+            gunController gunController = target.transform.Find("gun").GetComponent<gunController>();
+            if (gunController != null)
+            {
+                gunController.fireRate -= amount;
+
+                behaviour.StartCoroutine(RemovePowerUp(gunController));
+            }
+            else
+            {
+                Debug.LogError("gunController not found on gun object.");
+            }
         }
         else
         {
-            Debug.LogError("gunController not found on gun object.");
+            Debug.LogError("No MonoBehaviour component found on target.");
         }
+    }
+    IEnumerator RemovePowerUp(gunController gunController)
+    {
+        yield return new WaitForSeconds(duration);
+        gunController.fireRate += amount;
     }
 }

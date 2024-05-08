@@ -743,8 +743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseSpeed: 5
-  health: 20
-  maxHealth: 20
+  health: 500
+  maxHealth: 500
   BloodPrefab: {fileID: 1999956753668355713, guid: f86cf2838887b6b44a3855d25e927a05, type: 3}
   healthBar: {fileID: 0}
 --- !u!50 &34095700
