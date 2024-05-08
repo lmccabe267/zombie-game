@@ -12,7 +12,7 @@ public class SpeedBuff : PowerUp
         gunController gunController = target.transform.Find("gun").GetComponent<gunController>();
         if (gunController != null)
         {
-            gunController.fireRate += amount;
+            gunController.fireRate -= amount;
         }
         else
         {
