@@ -51,7 +51,8 @@ public class PlayerController : MonoBehaviour
     {
         var zombie = other.collider.GetComponent<Zombie>();
         var brick = other.collider.GetComponent<EnemyBrickScript>();
-        if ((zombie != null || brick != null))
+        var bossAldo = other.collider.GetComponent<BossAldo>();
+        if ((zombie != null || brick != null || bossAldo != null))
         {
             if(health != 0)
             {

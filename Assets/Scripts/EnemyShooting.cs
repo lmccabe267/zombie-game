@@ -7,18 +7,19 @@ public class EnemyShooting : MonoBehaviour
     public GameObject brick;
     public Transform brickPos;
     public GameObject player;
+    private PlayerController _player;
 
-    private float timer;
+    private float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        _player = FindAnyObjectByType<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player != null)
+        if(_player != null)
         {
             timer += Time.deltaTime;
             if (timer > 2)

@@ -38,7 +38,7 @@ public class EnemyBrickScript : MonoBehaviour
             Physics2D.IgnoreLayerCollision(9,13);
         }
 
-        Destroy(gameObject);
+        
         
         
     }

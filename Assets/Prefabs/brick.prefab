@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  force: 10
+  force: 20
 --- !u!61 &8429275757890078660
 BoxCollider2D:
   m_ObjectHideFlags: 0
