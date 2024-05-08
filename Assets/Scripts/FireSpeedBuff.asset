@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bc9a7cd4cb042f5bd9b252bfab3e41, type: 3}
   m_Name: FireSpeedBuff
   m_EditorClassIdentifier: 
-  rate: 3
+  amount: 2
