@@ -14,7 +14,7 @@ public class Zombie : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _speed = BaseSpeed * (1 + Random.Range(-0.5f, 0.5f));
+        _speed = BaseSpeed * (1 + Random.Range(-0.25f, 0.5f));
         _player = FindAnyObjectByType<PlayerController>();
         health = SceneManager.GetActiveScene().buildIndex + 1;
         zombieCollider = GetComponent<CircleCollider2D>();
