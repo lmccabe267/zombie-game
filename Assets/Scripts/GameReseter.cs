@@ -7,7 +7,7 @@ public class GameReseter : MonoBehaviour
     {
         if (Input.GetButtonDown("Reset"))
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
