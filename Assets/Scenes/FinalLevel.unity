@@ -206,8 +206,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 882366732}
-        m_TargetAssemblyTypeName: FinalLevel, Assembly-CSharp
+      - m_Target: {fileID: 882366733}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:
@@ -215,7 +215,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Main Menu
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &267687461
@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 882366729}
   - component: {fileID: 882366728}
   - component: {fileID: 882366732}
+  - component: {fileID: 882366733}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -648,6 +649,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d94f22214cb2a784cb74b8266550a9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &882366733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882366727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e58ee0222bd23241ac97175df02b13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1424888331
